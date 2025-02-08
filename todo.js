@@ -20,7 +20,7 @@ const addtodo =()=>{
     deleteBtn.textContent = "Delete";  
     deleteBtn.className = "delete-btn";
 deleteBtn.onclick = () => {li.remove();  // delete on click....
-  removeTaskfromStorage(inputText);    //remove task from LS
+  removeTaskFromStorage(inputText);    //remove task from LS
 };
     li.appendChild(deleteBtn);
     list.appendChild(li);
@@ -39,8 +39,8 @@ const saveTaskToStorage = (task) => {
 //F...to load task from LS
 
 function loadT(){
-  let task=JSON.parse(localStorage.getItem("task")) || [];
-  task.forEach(task=> 
+  let tasks=JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.forEach(task=> 
     { const li= document.createElement("li");
     li.innerHTML=task;
 
@@ -59,10 +59,9 @@ function loadT(){
     
   });
 }
-
-
-
-
-
-
+const removeTaskFromStorage = (task) => {
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];                      /// Remove task from LS
+  tasks = tasks.filter(t => t !== task);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
 
