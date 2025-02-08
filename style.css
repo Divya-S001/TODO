@@ -1,3 +1,8 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
 body{
     background-color: aliceblue;
     font-family: 'Times New Roman', Times, serif;
@@ -6,18 +11,25 @@ body{
 }
 
 .container{
+    justify-content: center;
     max-width: 400px;
     background: rgb(233, 230, 230);
     padding: 20px;
     margin: auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    align-items: center;
 }
 
 .input-area{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+.input-area input{
+    border: none;
+    outline: none;
+    margin-top: 5%;
 }
 input {
     flex: 1;
@@ -32,8 +44,38 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    margin-top: 5%;
+}
+button:hover{
+    background-color: darkblue;
 }
 ul {
+   width: 100%;
+   max-width: 400px;
+   /* display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center; */
+   
+}
+ul li{
     list-style: none;
-    padding: 0;
+    border: 0.125px solid rgb(64, 63, 63);
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-block-end: 12px;
+    cursor: pointer;
+    background-color: #fefeff;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+li{
+    flex-grow: 1;
+}
+.delete-btn{
+    margin-top: 0%;
+}
+.delete-btn:hover{
+    background-color: darkblue;
 }
